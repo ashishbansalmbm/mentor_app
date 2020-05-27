@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'screens/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,14 +29,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text("My Shop"),
         ),
-        body: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => LoginPage()));
-          },
-          child: Text('Login'),
-        ));
+        body: SplashScreen(),
+    );
   }
 }

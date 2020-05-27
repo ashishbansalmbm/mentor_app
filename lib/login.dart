@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
+var loginUrl = 'http://192.168.42.120:3000/user/login';
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -38,7 +40,7 @@ signIn(String username, password) async {
   print(password);
   Map data = {'phone': username, 'password': password};
   var body = json.encode(data);
-  var url = 'http://10.0.2.2:3000/user/login';
+  var url = loginUrl;
   var response = await http.post(url,
       headers: {"Content-Type": "application/json"},
       body: body);
